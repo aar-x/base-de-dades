@@ -1,0 +1,27 @@
+El esquema movies, está formado por 5 tablas, dos de ellas se centran en las películas (tb_genre y tb_movie) y tres en personas que forman parte de esas películas (tb_role, tb_person y tb_movie_person).
+
+Cada tabla contiene una columna con la clave primaria, id, y las tablas están vinculadas entre sí a través de estas claves, como claves externas (foreign), de la siguiente manera:
+
+- movie_genre_id en tb_movie apunta a genre_id en tb_genre.
+
+con lo cual cada película queda vinculada con su correspondiente género.
+
+- person_parent_id apunta a person_id dentro de la misma tabla tb_person.
+
+esto lo interpreto como un mero experimento para comprobar que se pueden vincular dos columnas dentro de la misma tabla.
+
+- movie_id en tb_movie_person apunta a movie_id en tb_movie.
+
+con lo cual quedan vinculadas las personas a las películas.
+
+- person_id en tb_movie_person apunta a person_id en tb_person.
+
+lo que vincula a las personas con sus características.
+
+- role_id en tb_movie_person apunta a role_id en tb_role.
+
+y esto relaciona a las personas con su rol dentro de las películas.
+
+En cuanto a las demás columnas de cada tabla, todas tienen al menos 3 columnas, la de fecha de creación del registro, usuario que crea este primer registro y fecha de actualización del registro.
+
+El resto de columnas son específicas de cada tabla: formato, fechas, nombres, nacionalidad ...
