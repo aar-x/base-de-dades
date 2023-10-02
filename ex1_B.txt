@@ -1,0 +1,11 @@
+La base de datos (esquema) movies, contiene 5 tablas, tb_genre, tb_movie, tb_movie_person, tb_person y tb_role.
+
+La tabla tb_genre contiene 5 columnas: genre_id (int), genre_name (varchar-40), created_by_user (varchar-10), created_date (date), updated_date (date). Las tres primeras no pueden contener el valor nulo (estar vacías), y la tercera no lo estará por defecto ya que introduce el valor OS_SGAD como predeterminado. La columna  genre_id es primaria (identificador único).
+
+La tabla tb_movie contiene 8 columnas: movie_id (int), movie_title varchar-100), movie_date (date), movie_format (varchar-50), movie_genre_id (int), created_by_user, created_date, updated_date. Las 3 últimas tienen las mismas propiedades que en la tabla tb_genre. De entre las 5 primeras columnas movie_id es primaria, y movie_id y movie_title no pueden ser nulas. La columna movie_genre_id está vinculada externamente a genre_id en la tabla tb_genre.
+
+La tabla tb_movie_person contiene 7 columnas: movie_id, person_id (int), role_id (int), movie_award_ind (char-1), created_by_user, created_date y updated_date. Las columnas person_id, role_id y movie_award_ind no pueden estar vacías. En esta tabla movie_id, person_id y role_id son claves primarias y no contiene claves externas. El resto de columnas son equivalentes a las homónimas descritas más arriba.
+
+La tabla tb_person contiene 9 columnas: person_id, person_name (varchar-100), person_country (varchar-40), person_dob (date), person_dod(date), person_parent_id (int), created_by_user, created_date y updated_date. Las tres últimas comparten propiedades con las columnas del mismo nombre descritas más arriba. Entre las demás, person_id, person_name, person_dob no pueden ser nulas. La columna person_id es primaria y person_parent_id es clave externa vinculada a person_id dentro de la misma tabla.
+
+Por último tb_role contiene 5 columnas: role_id (int), role_name (varchar-60), created_by_user, created_date y updated_date. Las dos últimas han sido descritas anteriormente (mismas propiedades), las tres primeras no pueden ser nulas, role_id es primaria y no contiene claves externas.
